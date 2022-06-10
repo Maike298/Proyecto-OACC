@@ -33,7 +33,7 @@
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th>Marca</th>
+            <th>Marca de Computadoras</th>
             <th>Precio</th>
             <th>Fecha de Creación</th>
             <th>Modificar</th>
