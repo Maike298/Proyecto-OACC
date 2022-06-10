@@ -33,10 +33,10 @@
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Created At</th>
-            <th>Action</th>
+            <th>Marca</th>
+            <th>Precio</th>
+            <th>Fecha de Creación</th>
+            <th>Modificar</th>
           </tr>
         </thead>
         <tbody>
@@ -47,8 +47,8 @@
 
           while($row = mysqli_fetch_assoc($result_tasks)) { ?>
           <tr>
-            <td><?php echo $row['title']; ?></td>
-            <td><?php echo $row['description']; ?></td>
+            <td><?php echo $row['Marca']; ?></td>
+            <td><?php echo $row['Precio']; ?></td>
             <td><?php echo $row['created_at']; ?></td>
             <td>
               <a href="edit.php?id=<?php echo $row['id']?>" class="btn btn-secondary">

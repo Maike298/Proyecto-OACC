@@ -9,19 +9,19 @@ if  (isset($_GET['id'])) {
   $result = mysqli_query($conn, $query);
   if (mysqli_num_rows($result) == 1) {
     $row = mysqli_fetch_array($result);
-    $title = $row['title'];
-    $description = $row['description'];
+    $title = $row['Marca'];
+    $description = $row['Precio'];
   }
 }
 
 if (isset($_POST['update'])) {
   $id = $_GET['id'];
-  $title= $_POST['title'];
-  $description = $_POST['description'];
+  $title= $_POST['Marca'];
+  $description = $_POST['Precio'];
 
-  $query = "UPDATE task set title = '$title', description = '$description' WHERE id=$id";
+  $query = "UPDATE task set Marca = '$title', Precio = '$description' WHERE id=$id";
   mysqli_query($conn, $query);
-  $_SESSION['message'] = 'Task Updated Successfully';
+  $_SESSION['message'] = 'Se ha modificado';
   $_SESSION['message_type'] = 'warning';
   header('Location: index.php');
 }
@@ -34,10 +34,10 @@ if (isset($_POST['update'])) {
       <div class="card card-body">
       <form action="edit.php?id=<?php echo $_GET['id']; ?>" method="POST">
         <div class="form-group">
-          <input name="title" type="text" class="form-control" value="<?php echo $title; ?>" placeholder="Update Title">
+          <input name="Marca" type="text" class="form-control" value="<?php echo $title; ?>" placeholder="Update Title">
         </div>
         <div class="form-group">
-        <textarea name="description" class="form-control" cols="30" rows="10"><?php echo $description;?></textarea>
+        <textarea name="Precio" class="form-control" cols="30" rows="10"><?php echo $description;?></textarea>
         </div>
         <button class="btn-success" name="update">
           Update
